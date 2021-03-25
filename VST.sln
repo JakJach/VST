@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VST.MachineLearning", "VST.MachineLearning\VST.MachineLearning.pyproj", "{4D300A76-508B-417F-B1B0-6D203978891E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST.Core", "VST.Core\VST.Core.csproj", "{44A88D0F-9A0D-4E66-8468-983FCE42800F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST.UI", "VST.UI\VST.UI.csproj", "{1722D98C-5F41-431D-82C8-C6BE9C8167D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D300A76-508B-417F-B1B0-6D203978891E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D300A76-508B-417F-B1B0-6D203978891E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A88D0F-9A0D-4E66-8468-983FCE42800F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A88D0F-9A0D-4E66-8468-983FCE42800F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A88D0F-9A0D-4E66-8468-983FCE42800F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A88D0F-9A0D-4E66-8468-983FCE42800F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1722D98C-5F41-431D-82C8-C6BE9C8167D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1722D98C-5F41-431D-82C8-C6BE9C8167D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1722D98C-5F41-431D-82C8-C6BE9C8167D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1722D98C-5F41-431D-82C8-C6BE9C8167D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3554580-AFC7-4337-A9FE-D04559E7B2C2}
+	EndGlobalSection
+EndGlobal
