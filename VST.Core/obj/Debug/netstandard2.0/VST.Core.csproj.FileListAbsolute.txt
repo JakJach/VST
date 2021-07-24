@@ -1,0 +1,9 @@
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\bin\Debug\netstandard2.0\VST.Core.deps.json
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\bin\Debug\netstandard2.0\VST.Core.dll
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\bin\Debug\netstandard2.0\VST.Core.pdb
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\obj\Debug\netstandard2.0\VST.Core.csprojAssemblyReference.cache
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\obj\Debug\netstandard2.0\VST.Core.AssemblyInfoInputs.cache
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\obj\Debug\netstandard2.0\VST.Core.AssemblyInfo.cs
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\obj\Debug\netstandard2.0\VST.Core.csproj.CoreCompileInputs.cache
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\obj\Debug\netstandard2.0\VST.Core.dll
+C:\Users\Jakub Jachowicz\source\repos\VST\VST.Core\obj\Debug\netstandard2.0\VST.Core.pdb
