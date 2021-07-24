@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Jakub Jachowicz\source\repos\VST\VST.UI\App.xaml
-11407045341
+11256845736
 
-5-368720413
+7350252302
 216-1756270028
-MainWindow.xaml;
+Views\MainView.xaml;
 
 False
 
