@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace VST.Shell
+namespace VST.UI
 {
     /// <summary>
     /// Interaction logic for App.xaml

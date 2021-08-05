@@ -5,9 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VST.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        Background="PaleTurquoise">
+        Title="VST" Height="450" Width="800"
+        Background="BlueViolet">
+    <Window.Resources>
+        <ImageSource x:Key="Mute">/Resources/AudioMute_16x.png</ImageSource>
+        <ImageSource x:Key="Play">/Resources/AudioPlayback_16x.png</ImageSource>
+    </Window.Resources>
     <Grid>
-        <Button Content="Select File" Margin="10" Height="20" Width="100"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.ColumnSpan="2" Content="Select File" Margin="5" Height="20" Width="100"/>
+        <Button Grid.Row="0" Grid.Column="2" Margin="5" Height="20" Width="20">
+            <Image Source="{StaticResource Play}" Stretch="Uniform"/>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="3" Margin="5" Height="20" Width="20">
+            <Image Source="{StaticResource Mute}" Stretch="Uniform"/>
+        </Button>
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Slider Orientation="Vertical" HorizontalAlignment="Center" Maximum="100" Minimum="0" SmallChange="5" Value="50" Height="150" IsEnabled="True" Margin="20,5"/>
+                    <TextBlock Text="100Hz" HorizontalAlignment="Center" Foreground="AliceBlue"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Slider Orientation="Vertical" HorizontalAlignment="Center" Maximum="100" Minimum="0" SmallChange="5" Value="20" Height="150" IsEnabled="True" Margin="20,5"/>
+                    <TextBlock Text="900Hz" HorizontalAlignment="Center" Foreground="AliceBlue"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Slider Orientation="Vertical" HorizontalAlignment="Center" Maximum="100" Minimum="0" SmallChange="5" Value="70" Height="150" IsEnabled="True" Margin="20,5"/>
+                    <TextBlock Text="5kHz" HorizontalAlignment="Center" Foreground="AliceBlue"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Slider Orientation="Vertical" HorizontalAlignment="Center" Maximum="100" Minimum="0" SmallChange="5" Value="30" Height="150" IsEnabled="True" Margin="20,5"/>
+                    <TextBlock Text="12kHz" HorizontalAlignment="Center" Foreground="AliceBlue"/>
+                </StackPanel>
+            </StackPanel>
+            <ToggleButton Margin="5" Height="20" Width="100" x:Name="eqToggle" Content="Enable EQ"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+            
+        </StackPanel>
     </Grid>
 </Window>
