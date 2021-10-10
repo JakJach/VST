@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace VstNetAudioPlugin.Dsp
+namespace VST.Dsp
 {
     /// <summary>
     /// This is an example of a Digital Sound Processing component you could have in your plugin.

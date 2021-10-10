@@ -2,7 +2,7 @@
 using Jacobi.Vst.Plugin.Framework.Plugin;
 using System;
 
-namespace VstNetAudioPlugin
+namespace VST
 {
     /// <summary>
     /// This object manages the Plugin programs and its parameters.

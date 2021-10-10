@@ -3,9 +3,9 @@ using Jacobi.Vst.Plugin.Framework;
 using Jacobi.Vst.Plugin.Framework.Plugin;
 using System;
 using System.Diagnostics;
-using VstNetAudioPlugin.Dsp;
+using VST.Dsp;
 
-namespace VstNetAudioPlugin
+namespace VST
 {
     /// <summary>
     /// This object performs audio processing for your plugin.

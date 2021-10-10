@@ -3,7 +3,7 @@ using Jacobi.Vst.Plugin.Framework;
 using Jacobi.Vst.Plugin.Framework.Plugin;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace VstNetAudioPlugin
+namespace VST
 {
     /// <summary>
     /// The Plugin root object.

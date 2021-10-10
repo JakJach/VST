@@ -4,9 +4,9 @@ using Jacobi.Vst.Plugin.Framework.Common;
 using System;
 using System.Drawing;
 using System.Linq;
-using VstNetAudioPlugin.UI;
+using VST.UI;
 
-namespace VstNetAudioPlugin
+namespace VST
 {
     /// <summary>
     /// This object manages the custom editor (UI) for your plugin.

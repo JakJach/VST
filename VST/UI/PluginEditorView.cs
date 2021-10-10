@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace VstNetAudioPlugin.UI
+namespace VST.UI
 {
     public partial class PluginEditorView : UserControl
     {

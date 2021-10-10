@@ -1,7 +1,7 @@
 ﻿using Jacobi.Vst.Plugin.Framework;
 using Jacobi.Vst.Plugin.Framework.Plugin;
 
-namespace VstNetAudioPlugin
+namespace VST
 {
     /// <summary>
     /// This object receives all calls from the (unmanaged) host.

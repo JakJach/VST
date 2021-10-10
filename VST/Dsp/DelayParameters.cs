@@ -1,7 +1,7 @@
 ﻿using Jacobi.Vst.Core;
 using Jacobi.Vst.Plugin.Framework;
 
-namespace VstNetAudioPlugin.Dsp
+namespace VST.Dsp
 {
     /// <summary>
     /// Encapsulated delay parameters.

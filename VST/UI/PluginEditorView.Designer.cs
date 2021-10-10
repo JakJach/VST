@@ -1,5 +1,5 @@
 ﻿
-namespace VstNetAudioPlugin.UI
+namespace VST.UI
 {
     partial class PluginEditorView
     {

@@ -1,9 +1,9 @@
 ﻿using Jacobi.Vst.Plugin.Framework;
 using Jacobi.Vst.Plugin.Framework.Plugin;
 using System.Linq;
-using VstNetAudioPlugin.Dsp;
+using VST.Dsp;
 
-namespace VstNetAudioPlugin
+namespace VST
 {
     /// <summary>
     /// A central location for all plugin parameters
