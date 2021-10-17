@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VST.MachineLearning", "VST.MachineLearning\VST.MachineLearning.pyproj", "{39385396-3E1C-4A87-94E8-BB7FAE944FF0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST", "VST\VST.csproj", "{30272E39-B308-488C-8D9F-D2059E2E5628}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST.Host", "VST.Host\VST.Host.csproj", "{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VST.MachineLearning", "VST.MachineLearning\VST.MachineLearning.pyproj", "{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{39385396-3E1C-4A87-94E8-BB7FAE944FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39385396-3E1C-4A87-94E8-BB7FAE944FF0}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{39385396-3E1C-4A87-94E8-BB7FAE944FF0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{39385396-3E1C-4A87-94E8-BB7FAE944FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39385396-3E1C-4A87-94E8-BB7FAE944FF0}.Release|x64.ActiveCfg = Release|Any CPU
-		{39385396-3E1C-4A87-94E8-BB7FAE944FF0}.Release|x86.ActiveCfg = Release|Any CPU
 		{30272E39-B308-488C-8D9F-D2059E2E5628}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{30272E39-B308-488C-8D9F-D2059E2E5628}.Debug|x64.ActiveCfg = Debug|x64
 		{30272E39-B308-488C-8D9F-D2059E2E5628}.Debug|x64.Build.0 = Debug|x64
@@ -47,6 +41,12 @@ Global
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x64.Build.0 = Release|Any CPU
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x86.ActiveCfg = Release|Any CPU
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x86.Build.0 = Release|Any CPU
+		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Release|x64.ActiveCfg = Release|Any CPU
+		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
