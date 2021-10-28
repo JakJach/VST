@@ -1,18 +1,14 @@
-import os
-
-import IPython.display as ipd
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import sklearn as skl
-import sklearn.utils, sklearn.preprocessing, sklearn.decomposition, sklearn.svm
-from sklearn.preprocessing import MultiLabelBinarizer, LabelEncoder, LabelBinarizer, StandardScaler
+import os
 import librosa
 import librosa.display
+import numpy as np
+import IPython.display as ipd
+import matplotlib.pyplot as plt
 
-import utils
+import FMA.utils as utils
 
+os.environ['KAGGLE_CONFIG_DIR'] = "/content"
 
 # Directory where mp3 are stored.
 AUDIO_DIR = 'D:\\MGR\\fma\\fma_small'
@@ -23,34 +19,23 @@ tracks = utils.load(METADATA_DIR + '\\tracks.csv')
 features = utils.load(METADATA_DIR + '\\features.csv')
 echonest = utils.load(METADATA_DIR + '\\echonest.csv')
 
-np.testing.assert_array_equal(features.index, tracks.index)
-assert echonest.index.isin(tracks.index).all()
+file_name = utils.get_audio_path(AUDIO_DIR, 2)
 
-print(tracks.shape, features.shape, echonest.shape)
+print(file_name)
 
+audio_data, sampling_rate = librosa.load(file_name)
 
-#Select a subset of data
-subset = tracks.index[tracks['set', 'subset'] <= 'medium']
+print(sampling_rate)
 
-assert subset.isin(tracks.index).all()
-assert subset.isin(features.index).all()
+print(tracks.head())
 
-features_all = features.join(echonest, how='inner').sort_index(axis=1)
-print('Not enough Echonest features: {}'.format(features_all.shape))
+print(tracks['track','genre_top'].value_counts())
 
-tracks = tracks.loc[subset]
-features_all = features.loc[subset]
+def features_extractor(file_name):
+    audio, sample_rate = librosa.load(file_name, res_type='kaiser_fast') 
+    mfccs_features = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
+    mfccs_scaled_features = np.mean(mfccs_features.T,axis=0)
+    
+    return mfccs_scaled_features
 
-print(tracks.shape, features_all.shape)
-
-# Split dataset to training, validation & test sets
-train = tracks.index[tracks['set', 'split'] == 'training']
-val = tracks.index[tracks['set', 'split'] == 'validation']
-test = tracks.index[tracks['set', 'split'] == 'test']
-
-print('{} training examples, {} validation examples, {} testing examples'.format(*map(len, [train, val, test])))
-
-genres = list(LabelEncoder().fit(tracks['track', 'genre_top']).classes_)
-print('Top genres ({}): {}'.format(len(genres), genres))
-genres = list(MultiLabelBinarizer().fit(tracks['track', 'genres_all']).classes_)
-print('All genres ({}): {}'.format(len(genres), genres))
+print(features_extractor(file_name))

@@ -10,7 +10,7 @@
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <InterpreterId>CondaEnv|CondaEnv|env</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|venv</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,9 +22,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="environment.yml" />
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classifier.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FMA\utils.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="utils.py">
@@ -32,7 +36,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="CondaEnv|CondaEnv|env" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|venv" />
+    <InterpreterReference Include="Global|PythonCore|3.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FMA\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
