@@ -16,7 +16,7 @@ namespace VST
         public PluginParameters(IVstPluginEvents pluginEvents)
         {
             // register the parameters of all plugin (sub) components
-            DelayParameters = new DelayParameters(this);
+            EqualizerParameters = new EqualizerParameters(this);
 
             pluginEvents.Opened += Plugin_Opened;
         }
@@ -27,7 +27,7 @@ namespace VST
             SetHostAutomation(plugin?.Host?.GetInstance<IVstHostAutomation>());
         }
 
-        public DelayParameters DelayParameters { get; private set; }
+        public EqualizerParameters EqualizerParameters { get; private set; }
 
         /// <summary>
         /// Gets the central list of parameter categories.

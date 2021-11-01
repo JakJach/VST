@@ -40,17 +40,17 @@ namespace VST
             Throw.IfArgumentIsNull(parameters, nameof(parameters));
 
             // one set of parameters is shared for both channels.
-            Left = new Delay(parameters.DelayParameters);
-            Right = new Delay(parameters.DelayParameters);
+            Left = new Equalizer(parameters.EqualizerParameters);
+            Right = new Equalizer(parameters.EqualizerParameters);
 
             pluginEvents.Opened += Plugin_Opened;
         }
 
-        internal Delay Left { get; private set; }
-        internal Delay Right { get; private set; }
+        internal Equalizer Left { get; private set; }
+        internal Equalizer Right { get; private set; }
 
         /// <summary>
-        /// Override the default implementation to pass it through to the delay.
+        /// Override the default implementation to pass it through to the EQ.
         /// </summary>
         public override float SampleRate
         {
@@ -120,11 +120,11 @@ namespace VST
         }
 
         // process a single audio channel
-        private void Process(Delay delay, VstAudioBuffer input, VstAudioBuffer output)
+        private void Process(Equalizer equalizer, VstAudioBuffer input, VstAudioBuffer output)
         {
             for (int i = 0; i < input.SampleCount; i++)
             {
-                output[i] = delay.ProcessSample(input[i]);
+                output[i] = equalizer.ProcessSample(input[i]);
             }
         }
 

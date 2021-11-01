@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST", "VST\VST.csproj", "{3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST.Host", "VST.Host\VST.Host.csproj", "{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VST.MachineLearning", "VST.MachineLearning\VST.MachineLearning.pyproj", "{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VST.MachineLearning", "VST.MachineLearning\VST.MachineLearning.pyproj", "{A378BB95-88D3-4BDF-919F-A222B39E6417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audio Spectrum", "D:\MGR\Audio Spectrum\Audio Spectrum\Audio Spectrum.csproj", "{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,12 +43,20 @@ Global
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x64.Build.0 = Release|Any CPU
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x86.ActiveCfg = Release|Any CPU
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x86.Build.0 = Release|Any CPU
-		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Release|x64.ActiveCfg = Release|Any CPU
-		{6C8C7620-D6B2-463C-B0EB-B52B3B92B041}.Release|x86.ActiveCfg = Release|Any CPU
+		{A378BB95-88D3-4BDF-919F-A222B39E6417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A378BB95-88D3-4BDF-919F-A222B39E6417}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A378BB95-88D3-4BDF-919F-A222B39E6417}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A378BB95-88D3-4BDF-919F-A222B39E6417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A378BB95-88D3-4BDF-919F-A222B39E6417}.Release|x64.ActiveCfg = Release|Any CPU
+		{A378BB95-88D3-4BDF-919F-A222B39E6417}.Release|x86.ActiveCfg = Release|Any CPU
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Debug|x64.ActiveCfg = Debug|x86
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Debug|x86.ActiveCfg = Debug|x86
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Debug|x86.Build.0 = Debug|x86
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Release|Any CPU.ActiveCfg = Release|x86
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Release|x64.ActiveCfg = Release|x86
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Release|x86.ActiveCfg = Release|x86
+		{F677DE33-D58B-49DB-BFCD-0ADC4EEC3EC6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

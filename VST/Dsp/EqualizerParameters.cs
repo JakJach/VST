@@ -41,7 +41,7 @@ namespace VST.Dsp
             // all parameter definitions are added to a central list.
             VstParameterInfoCollection parameterInfos = parameters.ParameterInfos;
 
-            // retrieve the category for all delay parameters.
+            // retrieve the category for all EQ parameters.
             VstParameterCategory paramCategory =
                 parameters.GetParameterCategory(ParameterCategoryName);
 
@@ -51,9 +51,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 01 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 1",
+                Label = "16 Hz",
+                ShortLabel = "16 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -71,9 +71,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 02 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 2",
+                Label = "32 Hz",
+                ShortLabel = "32 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -91,9 +91,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 03 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 3",
+                Label = "63 Hz",
+                ShortLabel = "63 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -111,9 +111,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 04 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 4",
+                Label = "125 Hz",
+                ShortLabel = "125 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -131,9 +131,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 05 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 5",
+                Label = "250 Hz",
+                ShortLabel = "250 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -151,9 +151,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 06 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 6",
+                Label = "500 Hz",
+                ShortLabel = "500 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -171,9 +171,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 07 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 7",
+                Label = "1 kHz",
+                ShortLabel = "1 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -191,9 +191,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 08 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 8",
+                Label = "2 kHz",
+                ShortLabel = "2 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -211,9 +211,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 09 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 9",
+                Label = "4 kHz",
+                ShortLabel = "4 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -231,9 +231,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 10 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 10",
+                Label = "8 kHz",
+                ShortLabel = "8 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
@@ -251,9 +251,9 @@ namespace VST.Dsp
             {
                 Category = paramCategory,
                 CanBeAutomated = true,
-                Name = "Band 11 Boost",
-                Label = "Decibel",
-                ShortLabel = "Db",
+                Name = "Band 11",
+                Label = "16 kHz",
+                ShortLabel = "16 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,

@@ -9,18 +9,33 @@ namespace VST.Dsp
         private static readonly float[] BAND_CENTER_FREQUENCIES = { 16f, 31.5f, 63f, 125f, 250f, 500f, 1000f, 2000f, 4000f, 8000f, 16000f };
 
         private readonly EqualizerParameters _parameters;
-        private BiQuadFilter[] _filters;
+        private readonly BiQuadFilter[] _filters;
 
+        /// <summary>
+        /// Constructs a new instance.
+        /// </summary>
         public Equalizer(EqualizerParameters parameters)
         {
             _parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
 
             _filters = new BiQuadFilter[NUMBER_OF_FILTERS];
             SetFilters(parameters);
+
+            _parameters.Band01BoostMgr.PropertyChanged += Band01BoostMgr_PropertyChanged;
+        }
+
+        private void Band01BoostMgr_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if(ReferenceEquals(_parameters.Band01BoostMgr, sender))
+            {
+                SetFilters(_parameters);
+            }
         }
 
         private float _sampleRate;
-
+        /// <summary>
+        /// Gets or sets the sample rate.
+        /// </summary>
         public float SampleRate
         {
             get { return _sampleRate; }
@@ -34,11 +49,8 @@ namespace VST.Dsp
         /// <returns>Returns the new value for the sample.</returns>
         public float ProcessSample(float sample)
         {
-            float output = sample;
-
             // process output
-            foreach (var filter in _filters)
-                output *= filter.Transform(output);
+            float output = (_parameters.Band01BoostMgr.CurrentValue * sample);
 
             return output;
         }

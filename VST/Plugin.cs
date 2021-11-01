@@ -17,27 +17,27 @@ namespace VST
         /// <summary>
         /// TODO: assign a plugin name.
         /// </summary>
-        private const string PluginName = "MyAudioPluginName";
+        private const string PluginName = "WILD VST EQ";
         /// <summary>
         /// TODO: assign a product name.
         /// </summary>
-        private const string ProductName = "MyProduct";
+        private const string ProductName = "WILD VST Mastering EQ";
         /// <summary>
         /// TODO: assign a vendor name.
         /// </summary>
-        private const string VendorName = "MyVendor";
+        private const string VendorName = "WILD";
         /// <summary>
         /// TODO: assign a plugin version.
         /// </summary>
-        private const int PluginVersion = 0000;
+        private const int PluginVersion = 0001;
         /// <summary>
         /// TODO: what type of plugin are your making?
         /// </summary>
-        private const VstPluginCategory PluginCategory = VstPluginCategory.RoomFx;
+        private const VstPluginCategory PluginCategory = VstPluginCategory.Mastering;
         /// <summary>
         /// TODO: what can your plugin do?
         /// </summary>
-        private const VstPluginCapabilities PluginCapabilities = VstPluginCapabilities.ReceiveTimeInfo;
+        private const VstPluginCapabilities PluginCapabilities = VstPluginCapabilities.None;
         /// <summary>
         /// The number of samples your plugin lags behind.
         /// </summary>
