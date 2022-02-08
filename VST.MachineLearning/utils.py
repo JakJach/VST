@@ -1,4 +1,5 @@
 import scipy
+import numpy as np
 
 #Frequency band limit and center frequencies were taken as suggested on website:
 #https://www.engineeringtoolbox.com/octave-bands-frequency-limits-d_1602.html
