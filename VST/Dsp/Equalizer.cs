@@ -50,7 +50,12 @@ namespace VST.Dsp
         public float ProcessSample(float sample)
         {
             // process output
-            float output = (_parameters.Band01BoostMgr.CurrentValue * sample);
+            float output = 0;
+
+            foreach(var filter in _filters)
+            {
+                output += filter.Transform(sample);
+            }
 
             return output;
         }
@@ -59,17 +64,17 @@ namespace VST.Dsp
         {
             if (_filters.Length == 11)
             {
-                _filters[0] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[0], 1.0f, parameters.Band01BoostMgr.CurrentValue);
-                _filters[1] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[1], 1.0f, parameters.Band02BoostMgr.CurrentValue);
-                _filters[2] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[2], 1.0f, parameters.Band03BoostMgr.CurrentValue);
-                _filters[3] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[3], 1.0f, parameters.Band04BoostMgr.CurrentValue);
-                _filters[4] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[4], 1.0f, parameters.Band05BoostMgr.CurrentValue);
-                _filters[5] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[5], 1.0f, parameters.Band06BoostMgr.CurrentValue);
-                _filters[6] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[6], 1.0f, parameters.Band07BoostMgr.CurrentValue);
-                _filters[7] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[7], 1.0f, parameters.Band08BoostMgr.CurrentValue);
-                _filters[8] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[8], 1.0f, parameters.Band09BoostMgr.CurrentValue);
-                _filters[9] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[9], 1.0f, parameters.Band10BoostMgr.CurrentValue);
-                _filters[10] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[10], 1.0f, parameters.Band11BoostMgr.CurrentValue);
+                _filters[0] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[0], 0.5f, parameters.Band01BoostMgr.CurrentValue);
+                _filters[1] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[1], 0.5f, parameters.Band02BoostMgr.CurrentValue);
+                _filters[2] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[2], 0.5f, parameters.Band03BoostMgr.CurrentValue);
+                _filters[3] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[3], 0.5f, parameters.Band04BoostMgr.CurrentValue);
+                _filters[4] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[4], 0.5f, parameters.Band05BoostMgr.CurrentValue);
+                _filters[5] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[5], 0.5f, parameters.Band06BoostMgr.CurrentValue);
+                _filters[6] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[6], 0.5f, parameters.Band07BoostMgr.CurrentValue);
+                _filters[7] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[7], 0.5f, parameters.Band08BoostMgr.CurrentValue);
+                _filters[8] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[8], 0.5f, parameters.Band09BoostMgr.CurrentValue);
+                _filters[9] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[9], 0.5f, parameters.Band10BoostMgr.CurrentValue);
+                _filters[10] = BiQuadFilter.PeakingEQ(SampleRate, BAND_CENTER_FREQUENCIES[10], 0.5f, parameters.Band11BoostMgr.CurrentValue);
             }
         }
     }
