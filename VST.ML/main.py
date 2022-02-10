@@ -16,10 +16,6 @@ from pydub import AudioSegment
 import scipy
 from scipy import misc
 
-#MATPLOTLIB
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-
 #KERAS
 from keras import layers
 from keras.layers import (Input, Add, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, 
@@ -27,9 +23,10 @@ from keras.layers import (Input, Add, Dense, Activation, ZeroPadding2D, BatchNor
 from keras.models import Model, load_model
 from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
-from keras.utils import layer_utils, plot_model
+from keras.utils import layer_utils
+from keras.utils.vis_utils import plot_model
 from keras.utils.vis_utils import model_to_dot
-from keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 from keras.initializers import glorot_uniform
 
 #Dataset utils

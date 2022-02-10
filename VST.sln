@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST", "VST\VST.csproj", "{30272E39-B308-488C-8D9F-D2059E2E5628}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VST.Host", "VST.Host\VST.Host.csproj", "{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VST.MachineLearning", "VST.MachineLearning\VST.MachineLearning.pyproj", "{E1CCFA83-2B37-4E6A-8656-B18007E6253F}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VST.ML", "VST.ML\VST.ML.pyproj", "{467DA43D-07D1-4296-8F78-4A735ADD40D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,12 +41,12 @@ Global
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x64.Build.0 = Release|Any CPU
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x86.ActiveCfg = Release|Any CPU
 		{10D541EE-91FD-4BD9-9BF0-CC07D60C5072}.Release|x86.Build.0 = Release|Any CPU
-		{E1CCFA83-2B37-4E6A-8656-B18007E6253F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1CCFA83-2B37-4E6A-8656-B18007E6253F}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{E1CCFA83-2B37-4E6A-8656-B18007E6253F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E1CCFA83-2B37-4E6A-8656-B18007E6253F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1CCFA83-2B37-4E6A-8656-B18007E6253F}.Release|x64.ActiveCfg = Release|Any CPU
-		{E1CCFA83-2B37-4E6A-8656-B18007E6253F}.Release|x86.ActiveCfg = Release|Any CPU
+		{467DA43D-07D1-4296-8F78-4A735ADD40D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467DA43D-07D1-4296-8F78-4A735ADD40D5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{467DA43D-07D1-4296-8F78-4A735ADD40D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{467DA43D-07D1-4296-8F78-4A735ADD40D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467DA43D-07D1-4296-8F78-4A735ADD40D5}.Release|x64.ActiveCfg = Release|Any CPU
+		{467DA43D-07D1-4296-8F78-4A735ADD40D5}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

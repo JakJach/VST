@@ -1,4 +1,3 @@
-import dotenv
 import pydot
 import requests
 import numpy as np
@@ -15,9 +14,6 @@ import ast
 # TODO: fix dataset to be constant.
 NB_AUDIO_SAMPLES = 1321967
 SAMPLING_RATE = 44100
-
-# Load the environment from the .env file.
-dotenv.load_dotenv(dotenv.find_dotenv())
 
 
 class FreeMusicArchive:
