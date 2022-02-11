@@ -12,11 +12,11 @@ from PIL import Image
 from IPython.display import SVG
 from pydub import AudioSegment
 
-#SCIPY
+# SCIPY
 import scipy
 from scipy import misc
 
-#KERAS
+# KERAS
 from keras import layers
 from keras.layers import (Input, Add, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, 
                           Conv2D, AveragePooling2D, MaxPooling2D, GlobalMaxPooling2D)
@@ -29,49 +29,49 @@ from keras.utils.vis_utils import model_to_dot
 from tensorflow.keras.optimizers import Adam
 from keras.initializers import glorot_uniform
 
-#Dataset utils
+# Dataset utils
 import FMA.utils
 from utils import Helper
 
-#Define audio processing values
+# Define audio processing values
 SAMPLING_RATE = 44100
 N_FFT = 64
 FREQS = librosa.fft_frequencies(sr=SAMPLING_RATE, n_fft=N_FFT)
 
-#Directory where mp3 are stored
+# Directory where mp3 are stored
 AUDIO_DIR = 'D:\\MGR\\fma\\fma_small'
 METADATA_DIR = 'D:\\MGR\\fma\\fma_metadata'
 WORKSPACE_DIR = 'D:\\MGR\\_workspace'
 
-#Import dataset metadata
+# Import dataset metadata
 tracks = FMA.utils.load(METADATA_DIR + '\\tracks.csv')
 features = FMA.utils.load(METADATA_DIR + '\\features.csv')
 echonest = FMA.utils.load(METADATA_DIR + '\\echonest.csv')
 
-#Select metadata of FMA small
+# Select metadata of FMA small
 subset = tracks.index[tracks['set', 'subset'] <= 'small']
 assert subset.isin(tracks.index).all()
 assert subset.isin(features.index).all()
 
-#Join echonest features
+# Join echonest features
 all_features = features.join(echonest, how='inner').sort_index(axis=1)
 
-#Select only those rows, that are indicated by subset
+# Select only those rows, that are indicated by subset
 tracks = tracks.loc[subset]
 all_features = features.loc[subset]
 
-#Join Multindex into one index
+# Join Multindex into one index
 tracks.columns = [' '.join(col).strip() for col in tracks.columns.values]
 
-#Select only columns important for the task
+# Select only columns important for the task
 tracks = tracks[['artist name', 'track title', 'track genre_top']]
 
-#There was some problem with file id=99134, so it has been removed
+# There was some problem with file id=99134, so it has been removed
 tracks = tracks.drop(index=99134)
 tracks = tracks.drop(index=108925)
 tracks = tracks.drop(index=133297)
 
-#Iterate through audio files
+# Iterate through audio files
 tempos = []
 filenames = []
 bandpowers = []
@@ -85,12 +85,12 @@ for subdir, dirs, files in os.walk(AUDIO_DIR):
             #Load audio file
             y, sr = librosa.load(filename, duration=3, sr=SAMPLING_RATE)
 
-            #Calculate and save tempo
+            # Calculate and save tempo
             tempo = librosa.beat.tempo(y=y, sr=sr)
             tempos.append(tempo)
             #print(tempo)
 
-            #Calculate each band power and add them to df
+            # Calculate each band power and add them to df
             bandpower = [Helper.bandpower(y,sr,11,22),Helper.bandpower(y,sr,22,44),Helper.bandpower(y,sr,44,88),
                          Helper.bandpower(y,sr,88,177),Helper.bandpower(y,sr,177,355),Helper.bandpower(y,sr,355,710),
                          Helper.bandpower(y,sr,710,1420),Helper.bandpower(y,sr,1420,2840),Helper.bandpower(y,sr,2840,5680),
@@ -98,9 +98,22 @@ for subdir, dirs, files in os.walk(AUDIO_DIR):
             bandpowers.append(bandpower)
             #print(bandpower)
 
-#Add filenames to dataframe
-tracks['track filename'] = filenames;
-tracks['track tempo'] = tempos;
-tracks['track bandpowers'] = bandpowers;
+# Add filenames to dataframe
+tracks['track filename'] = filenames
+tracks['track tempo'] = tempos
+
+# Split bandpowers into seperate columns
+tracks[['track band_1','track band_2','track band_3','track band_4','track band_5','track band_6','track band_7','track band_8','track band_9','track band_10','track band_11']] = bandpowers
+
+# Export data to csv file
+tracks.to_csv('D:\\MGR\\fma\\tracks.csv', header=True)
+
+# Shuffle files randomly
+random.shuffle(filenames)
+
+# Select test files and move them to test directory
+test_filenames = filenames[0:1600]
+
+train_filenames = filenames[1601:]
 
 print(tracks.head())
