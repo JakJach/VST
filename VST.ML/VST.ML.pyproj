@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectTypeGuids>{6c0efafa-1a04-41b6-a6d7-511b90951b5b};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>data_treatment.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="FMA\utils.py" />
     <Compile Include="data_treatment.py" />
+    <Compile Include="main.py" />
     <Compile Include="utils.py" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +43,9 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X64</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda39-64" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

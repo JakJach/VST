@@ -1,33 +1,5 @@
-import tensorflow as tf
-import numpy as np
-import glob
 import os
 import librosa
-import pandas as pd
-import pydot
-import shutil
-import random
-
-from PIL import Image
-from IPython.display import SVG
-from pydub import AudioSegment
-
-# SCIPY
-import scipy
-from scipy import misc
-
-# KERAS
-from keras import layers
-from keras.layers import (Input, Add, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, 
-                          Conv2D, AveragePooling2D, MaxPooling2D, GlobalMaxPooling2D)
-from keras.models import Model, load_model
-from keras.preprocessing import image
-from keras.preprocessing.image import ImageDataGenerator
-from keras.utils import layer_utils
-from keras.utils.vis_utils import plot_model
-from keras.utils.vis_utils import model_to_dot
-from tensorflow.keras.optimizers import Adam
-from keras.initializers import glorot_uniform
 
 # Dataset utils
 import FMA.utils
@@ -35,30 +7,26 @@ from utils import Helper
 
 # Define audio processing values
 SAMPLING_RATE = 44100
-N_FFT = 64
-FREQS = librosa.fft_frequencies(sr=SAMPLING_RATE, n_fft=N_FFT)
+
+# Frequency band limit and center frequencies were taken as suggested on website:
+# https://www.engineeringtoolbox.com/octave-bands-frequency-limits-d_1602.html
+BAND_LIMITS = [(11,22),(22,44),(44,88),(88,177),(177,355),(355,710),(710,1420),(1420,2840),(2840,5680),(5680,11360),(11360,22720)]
 
 # Directory where mp3 are stored
 AUDIO_DIR = 'D:\\MGR\\fma\\fma_small'
 METADATA_DIR = 'D:\\MGR\\fma\\fma_metadata'
-WORKSPACE_DIR = 'D:\\MGR\\_workspace'
 
 # Import dataset metadata
 tracks = FMA.utils.load(METADATA_DIR + '\\tracks.csv')
 features = FMA.utils.load(METADATA_DIR + '\\features.csv')
-echonest = FMA.utils.load(METADATA_DIR + '\\echonest.csv')
 
 # Select metadata of FMA small
 subset = tracks.index[tracks['set', 'subset'] <= 'small']
 assert subset.isin(tracks.index).all()
 assert subset.isin(features.index).all()
 
-# Join echonest features
-all_features = features.join(echonest, how='inner').sort_index(axis=1)
-
 # Select only those rows, that are indicated by subset
 tracks = tracks.loc[subset]
-all_features = features.loc[subset]
 
 # Join Multindex into one index
 tracks.columns = [' '.join(col).strip() for col in tracks.columns.values]
@@ -66,7 +34,7 @@ tracks.columns = [' '.join(col).strip() for col in tracks.columns.values]
 # Select only columns important for the task
 tracks = tracks[['artist name', 'track title', 'track genre_top']]
 
-# There was some problem with file id=99134, so it has been removed
+# There were loading problems with some files, so they have been removed
 tracks = tracks.drop(index=99134)
 tracks = tracks.drop(index=108925)
 tracks = tracks.drop(index=133297)
@@ -87,14 +55,14 @@ for subdir, dirs, files in os.walk(AUDIO_DIR):
 
             # Calculate and save tempo
             tempo = librosa.beat.tempo(y=y, sr=sr)
-            tempos.append(tempo)
+            tempos.append(tempo[0])
             #print(tempo)
 
             # Calculate each band power and add them to df
-            bandpower = [Helper.bandpower(y,sr,11,22),Helper.bandpower(y,sr,22,44),Helper.bandpower(y,sr,44,88),
-                         Helper.bandpower(y,sr,88,177),Helper.bandpower(y,sr,177,355),Helper.bandpower(y,sr,355,710),
-                         Helper.bandpower(y,sr,710,1420),Helper.bandpower(y,sr,1420,2840),Helper.bandpower(y,sr,2840,5680),
-                         Helper.bandpower(y,sr,5680,11360),Helper.bandpower(y,sr,11360,22720)]
+            bandpower = []
+            for band in BAND_LIMITS:
+                bandpower.append(Helper.bandpower(y,sr,band[0],band[1]))
+
             bandpowers.append(bandpower)
             #print(bandpower)
 
@@ -107,13 +75,5 @@ tracks[['track band_1','track band_2','track band_3','track band_4','track band_
 
 # Export data to csv file
 tracks.to_csv('D:\\MGR\\fma\\tracks.csv', header=True)
-
-# Shuffle files randomly
-random.shuffle(filenames)
-
-# Select test files and move them to test directory
-test_filenames = filenames[0:1600]
-
-train_filenames = filenames[1601:]
 
 print(tracks.head())
