@@ -50,14 +50,15 @@ namespace VST.Dsp
             var paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 1",
                 Label = "16 Hz",
                 ShortLabel = "16 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band01BoostMgr = paramInfo
@@ -70,14 +71,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 2",
                 Label = "32 Hz",
                 ShortLabel = "32 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band02BoostMgr = paramInfo
@@ -90,14 +92,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 3",
                 Label = "63 Hz",
                 ShortLabel = "63 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band03BoostMgr = paramInfo
@@ -110,14 +113,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 4",
                 Label = "125 Hz",
                 ShortLabel = "125 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band04BoostMgr = paramInfo
@@ -130,14 +134,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 5",
                 Label = "250 Hz",
                 ShortLabel = "250 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band05BoostMgr = paramInfo
@@ -150,14 +155,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 6",
                 Label = "500 Hz",
                 ShortLabel = "500 Hz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band06BoostMgr = paramInfo
@@ -170,14 +176,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 7",
                 Label = "1 kHz",
                 ShortLabel = "1 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band07BoostMgr = paramInfo
@@ -190,14 +197,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 8",
                 Label = "2 kHz",
                 ShortLabel = "2 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band08BoostMgr = paramInfo
@@ -210,14 +218,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 9",
                 Label = "4 kHz",
                 ShortLabel = "4 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band09BoostMgr = paramInfo
@@ -230,14 +239,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 10",
                 Label = "8 kHz",
                 ShortLabel = "8 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band10BoostMgr = paramInfo
@@ -250,14 +260,15 @@ namespace VST.Dsp
             paramInfo = new VstParameterInfo
             {
                 Category = paramCategory,
-                CanBeAutomated = true,
+                CanBeAutomated = false,
                 Name = "Band 11",
                 Label = "16 kHz",
                 ShortLabel = "16 kHz",
                 LargeStepFloat = 0.1f,
                 SmallStepFloat = 0.01f,
                 StepFloat = 0.05f,
-                DefaultValue = 0.5f
+                DefaultValue = 0.5f,
+                NullValue = 0.5f
             };
 
             Band11BoostMgr = paramInfo

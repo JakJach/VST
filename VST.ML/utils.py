@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class Helper:
+    #Calculate power (in dB) of band <fmin, fmax>
     def bandpower(x, fs, fmin, fmax):
         # Extracting the length and the half-length of the signal to input to the foruier transform
         sig_length = len(x)
@@ -29,7 +30,8 @@ class Helper:
         idx_max = np.argmax(x_axis > fmax) - 1
 
         return np.average(exp_signal[idx_min:idx_max])
-
+    
+    #Plot correlation plot for given Pandas dataframe
     def plot_corr(df, size=16):
         corr = df.corr()
         fig, ax = plt.subplots(figsize=(size,size))

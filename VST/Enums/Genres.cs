@@ -4,38 +4,22 @@ namespace VST
 {
     public enum Genres : int
     {
-        [StringValue("Rock")]
-        Rock,
-        [StringValue("Experimental")]
-        Experimental,
-        [StringValue("Electronic")]
-        Electronic,
         [StringValue("Hip-Hop")]
         HipHop,
-        [StringValue("Folk")]
-        Folk,
         [StringValue("Pop")]
         Pop,
-        [StringValue("Instrumental")]
-        Instrumental,
+        [StringValue("Folk")]
+        Folk,
+        [StringValue("Experimental")]
+        Experimental,
+        [StringValue("Rock")]
+        Rock,
         [StringValue("International")]
         International,
-        [StringValue("Classical")]
-        Classical,
-        [StringValue("Jazz")]
-        Jazz,
-        [StringValue("Old-Time / Historic")]
-        OldTime_Historic,
-        [StringValue("Spoken")]
-        Spoken,
-        [StringValue("Country")]
-        Country,
-        [StringValue("Soul-RnB")]
-        Soul_RnB,
-        [StringValue("Blues")]
-        Blues,
-        [StringValue("Easy Listetning")]
-        EasyListening,
+        [StringValue("Electronic")]
+        Electronic,
+        [StringValue("Instrumental")]
+        Instrumental,
         NONE
     }
 
