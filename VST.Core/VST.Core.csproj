@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Jacobi.Vst.Core">
+      <HintPath>..\..\..\..\.nuget\packages\vst.net2-plugin\2.0.3\lib\net5.0\x64\Jacobi.Vst.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Plugin.Framework">
+      <HintPath>..\..\..\..\.nuget\packages\vst.net2-plugin\2.0.3\lib\net5.0\x64\Jacobi.Vst.Plugin.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Plugin.Interop">
+      <HintPath>..\..\..\..\.nuget\packages\vst.net2-plugin\2.0.3\lib\net5.0\x64\Jacobi.Vst.Plugin.Interop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

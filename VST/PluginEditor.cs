@@ -1,10 +1,10 @@
 ﻿using Jacobi.Vst.Core;
 using Jacobi.Vst.Plugin.Framework;
-using Jacobi.Vst.Plugin.Framework.Common;
 using System;
 using System.Drawing;
 using System.Linq;
-using VST.UI;
+using VST.Core;
+using VST.Core.UI;
 
 namespace VST
 {
@@ -18,17 +18,21 @@ namespace VST
     internal sealed class PluginEditor : IVstPluginEditor
     {
         private readonly PluginParameters _parameters;
-        private readonly WinFormsControlWrapper<PluginEditorView> _view;
+        private readonly WPFControlWrapper<PluginEditorView> _view;
 
         public PluginEditor(PluginParameters parameters)
         {
             _parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
-            _view = new WinFormsControlWrapper<PluginEditorView>();
+            _view = new WPFControlWrapper<PluginEditorView>(800, 600);
         }
 
         public Rectangle Bounds
         {
-            get { return _view.Bounds; }
+            get
+            {
+                _view.GetBounds(out Rectangle bounds);
+                return bounds;
+            }
         }
 
         public void Close()
@@ -58,7 +62,7 @@ namespace VST
                 .Select(p => p.ParameterManager!)
                 .ToList();
 
-            _view.SafeInstance.InitializeParameters(paramList);
+            _view.Instance.InitializeParameters(paramList);
 
             _view.Open(hWnd);
         }
@@ -66,7 +70,7 @@ namespace VST
         public void ProcessIdle()
         {
             // keep your processing short!
-            _view.SafeInstance.ProcessIdle();
+            _view.Instance.ProcessIdle();
         }
     }
 }
