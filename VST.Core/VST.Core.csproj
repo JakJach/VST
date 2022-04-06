@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BASS" Version="2.4.12.1" />
+    <PackageReference Include="VST.NET2-Plugin" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Bass.Net">
+      <HintPath>D:\MGR\Bass.NET\v4.5\Bass.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Jacobi.Vst.Core">
       <HintPath>..\..\..\..\.nuget\packages\vst.net2-plugin\2.0.3\lib\net5.0\x64\Jacobi.Vst.Core.dll</HintPath>
     </Reference>
